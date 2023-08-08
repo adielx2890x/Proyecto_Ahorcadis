@@ -1,7 +1,9 @@
 /*
 Crea una clase Keyboard en la carpeta src.
-Esta clase será la encargada de pintar el alfabeto en pantalla similar a la imagen adjunta.
-Por lo que la clase deberá tener una propiedad que contenga el alfabeto.
+Esta clase será la encargada de pintar el alfabeto en pantalla
+similar a la imagen adjunta.
+Por lo que la clase deberá tener una propiedad que contenga el
+alfabeto.
 Además de las siguientes funciones:
 
     createKeyboard() : Encargada de crear cada letra obtenida de la propiedad alfabeto y además agregarla a algún contenedor HTML.
@@ -21,10 +23,15 @@ keyboard.showCorrect('I');
 
 class Keyboard {
   constructor() {
-    this.keys = {};
+    this.keys = 
+      [
+      "Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P", "A", "S", "D", "F", "G", "H", "J", "K", "L", "Ñ", "Z", "X", "C", "V", "B", "N", "M" 
+    ]
+  
   }
   drawKeyboard() {
     this.keys.map((key) => {});
-    console.log("[]");
+    console.log(this.keys);
   }
 }
+console.log(Keyboard)
