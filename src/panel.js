@@ -27,14 +27,9 @@ class Panel {
         
         this._lines.push('_')
     }
-    
-
-    
   }
+
 
 }
 
-const P = new Panel();
-P.choiseWord();
-
-console.log(P.drawLines())
+export {Panel}
