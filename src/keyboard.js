@@ -23,16 +23,52 @@ keyboard.showCorrect('I');
 
 class Keyboard {
   constructor() {
-    this.keys = 
-      [
-      "Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P", "A", "S", "D", "F", "G", "H", "J", "K", "L", "Ñ", "Z", "X", "C", "V", "B", "N", "M" 
-    ]
+    this.keys = [
+      "Q",
+      "W",
+      "E",
+      "R",
+      "T",
+      "Y",
+      "U",
+      "I",
+      "O",
+      "P",
+      "A",
+      "S",
+      "D",
+      "F",
+      "G",
+      "H",
+      "J",
+      "K",
+      "L",
+      "Ñ",
+      "Z",
+      "X",
+      "C",
+      "V",
+      "B",
+      "N",
+      "M",
+    ];
   }
   drawKeyboard() {
-    this.keys.map((key) => {});
-    console.log(this.keys);
+    this.keys.map((key) => {
+      const puttingLetters = document.getElementById("keyBox");
+      const div = document.createElement("div");
+      const button = document.createElement("button");
+      button.textContent = key;
+      button.className = "keysButtons";
+      div.appendChild(button);
+      puttingLetters.appendChild(div);
+      div.className = "sob";
 
-    return this.drawKeyboard
+      button.addEventListener("click", function(){
+        console.log('clickqueaste', button.textContent)
+      })
+    });
   }
 }
-console.log(Keyboard)
+
+export { Keyboard };

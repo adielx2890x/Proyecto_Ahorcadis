@@ -1,1 +1,24 @@
-body{background-color: black;}
+body {
+  background-color: black;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+}
+
+#keyBox {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  width: 500px;
+
+}
+
+.keysButtons {
+  width: 25px;
+  height: 25px;
+}
+.sob {
+  width: 25px;
+  height: 25px;
+}
