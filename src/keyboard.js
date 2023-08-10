@@ -23,7 +23,7 @@ keyboard.showCorrect('I');
 
 class Keyboard {
   constructor() {
-    this.keys = [
+    this._keys = [
       "Q",
       "W",
       "E",
@@ -54,7 +54,7 @@ class Keyboard {
     ];
   }
   drawKeyboard() {
-    this.keys.map((key) => {
+    this._keys.map((key) => {
       const puttingLetters = document.getElementById("keyBox");
       const div = document.createElement("div");
       const button = document.createElement("button");
@@ -64,9 +64,9 @@ class Keyboard {
       puttingLetters.appendChild(div);
       div.className = "sob";
 
-      button.addEventListener("click", function(){
-        console.log('clickqueaste', button.textContent)
-      })
+      button.addEventListener("click", function () {
+        console.log("clickqueaste", button.textContent);
+      });
     });
   }
 }

@@ -5,6 +5,7 @@ Esta clase deberá poder pintar en pantalla la palabra a decifrar y actualizarla
 
 Similar a las imagenes adjuntas
  */
+import { Keyboard } from "./keyboard.js";
 
 class Panel {
   constructor() {
@@ -16,20 +17,21 @@ class Panel {
 
   choiseWord() {
     const id = Math.floor(Math.random() * (this._vector.length - 0), 0);
-    this._wordselected = this._vector[id]
+    this._wordselected = this._vector[id];
     console.log(id, this._wordselected);
   }
 
-  drawLines(){
-    const word = Array.from(this._wordselected)
-    
+  drawLines() {
+    const word = Array.from(this._wordselected);
+
     for (let index = 0; index < word.length; index++) {
-        
-        this._lines.push('_')
+      this._lines.push("_");
     }
   }
 
+  (){
+    const 
 
+  }
 }
-
-export {Panel}
+export { Panel };
