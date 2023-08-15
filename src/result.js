@@ -15,6 +15,22 @@ result.showResult(false, 'estudiar'); //Mensaje de derrota
 
 class Result {
   constructor() {
-    
+    this._victoryMessage = "¡Felicidades, has ganado!";
+    this._defeatMessage = "¡Has perdido! La palabra era:";
+    this._playAgainMessage = "Presiona el botón para jugar nuevamente";
+  }
+
+  getVictoryMessage(word) {
+    return `${this._victoryMessage} Palabra: ${word}`;
+  }
+
+  getDefeatMessage(word) {
+    return `${this._defeatMessage} ${word}`;
+  }
+
+  getPlayAgainMessage() {
+    return this._playAgainMessage;
   }
 }
+
+export { Result };

@@ -53,9 +53,11 @@ class Keyboard {
       "M",
     ];
   }
-  drawKeyboard() {
-    this._keys.map((key) => {
-      const puttingLetters = document.getElementById("keyBox");
+
+  drawKeyboard(panel) {
+    const puttingLetters = document.getElementById("keyBox");
+
+    this._keys.forEach((key) => {
       const div = document.createElement("div");
       const button = document.createElement("button");
       button.textContent = key;
@@ -64,8 +66,13 @@ class Keyboard {
       puttingLetters.appendChild(div);
       div.className = "sob";
 
-      button.addEventListener("click", function () {
-        console.log("clickqueaste", button.textContent);
+      button.addEventListener("click", () => {
+        const letraAdivinada = key;
+        console.log("Presionaste la tecla:", letraAdivinada);
+
+        if (panel._wordselected.includes(letraAdivinada)) {
+          panel.updatePanel(letraAdivinada);
+        }
       });
     });
   }
