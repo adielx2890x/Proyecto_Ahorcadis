@@ -21,6 +21,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const playAgainButton = document.getElementById("playAgainButton");
 
   function restartGame() {
+    const panelBox = document.getElementById("panelBox");
+    panelBox.innerHTML = "";
     panel.choiseWord();
     panel.drawLines();
     panel.putOnHtml();
@@ -28,10 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
     defeatMessage.textContent = "";
     playAgainButton.style.display = "none";
     bodyParts._currentPartIndex = 1;
-    
-
     bodyPartImage.src = "/assets/images/1.png";
-
   }
 
   playAgainButton.addEventListener("click", restartGame);
