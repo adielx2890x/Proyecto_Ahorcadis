@@ -72,7 +72,7 @@ class Keyboard {
 
         if (panel._wordselected.includes(letraAdivinada)) {
           panel.updatePanel(letraAdivinada);
-        }
+        }else{button.style.backgroundColor = "#f00"}
       });
     });
   }
