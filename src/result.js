@@ -21,7 +21,7 @@ class Result {
   }
 
   getVictoryMessage(word) {
-    return `${this._victoryMessage} Palabra: ${word}`;
+    return `${this._victoryMessage} ${word}`;
   }
 
   getDefeatMessage(word) {

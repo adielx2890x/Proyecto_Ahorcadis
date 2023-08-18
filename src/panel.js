@@ -16,7 +16,7 @@ class Panel {
   }
 
   choiseWord() {
-    const id = Math.floor(Math.random() * this._vector.length);
+      const id = Math.floor(Math.random() * this._vector.length);
     this._wordselected = this._vector[id];
 
     const choiseRan = Math.floor(Math.random() * (this._vector.length - 0), 0);

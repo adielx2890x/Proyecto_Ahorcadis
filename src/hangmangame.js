@@ -1,0 +1,12 @@
+class HangmanGame {
+ constructor() {
+
+    
+ }
+
+startGame() {
+
+}
+
+
+}
