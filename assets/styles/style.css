@@ -16,15 +16,15 @@ main {
 }
 
 #keyBox {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
   gap: 5px;
 }
 
 .keysButtons {
   padding: 10px 20px;
   font-size: 16px;
-  background-color: #f0f0f0;
+  background-color: #000000;
   color: #fff;
   border: none;
   cursor: pointer;
@@ -32,7 +32,27 @@ main {
 }
 
 .keysButtons:hover {
-  background-color: #870000;
+  background-color: #919191;
+}
+
+.correct {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #0f0;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.incorrect {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #ff0000;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 #panelBox {
@@ -45,12 +65,9 @@ main {
   margin: 0 5px;
 }
 
-
 #bodyPartImage {
   width: 150px;
-  height: auto; 
-  display: block; 
-  margin: 0 auto; 
+  height: auto;
+  display: block;
+  margin: 0 auto;
 }
-
-

@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const playAgainButton = document.getElementById("playAgainButton");
 
   function restartGame() {
+    gameEnded = false
     const panelBox = document.getElementById("panelBox");
     panelBox.innerHTML = "";
     panel.choiseWord();
@@ -31,32 +32,46 @@ document.addEventListener("DOMContentLoaded", () => {
     playAgainButton.style.display = "none";
     bodyParts._currentPartIndex = 1;
     bodyPartImage.src = "/assets/images/1.png";
+    keyboard.resetKeys();
+    keyboard.enableColorChanges()
   }
+
+  let gameEnded = false;
 
   playAgainButton.addEventListener("click", restartGame);
 
+  /* */
+
   document.querySelectorAll(".keysButtons").forEach((button) => {
     button.addEventListener("click", () => {
-      const letraAdivinada = button.textContent;
+      if (!gameEnded ) {
+        const letraAdivinada = button.textContent;
 
-      if (panel._wordselected.includes(letraAdivinada)) {
-        panel.updatePanel(letraAdivinada);
-        if (panel._lines.join("") === panel._wordselected) {
-          victoryMessage.textContent = result.getVictoryMessage(
-            panel._wordselected
-          );
-          playAgainButton.style.display = "block";
-        }
-      } else {
-        const nextPartImage = bodyParts.getNextPart();
-        if (nextPartImage) {
-          bodyPartImage.src = nextPartImage;
-        }
-        if (bodyParts._currentPartIndex === bodyParts._parts.length) {
-          defeatMessage.textContent = result.getDefeatMessage(
-            panel._wordselected
-          );
-          playAgainButton.style.display = "block";
+
+
+        if (panel._wordselected.includes(letraAdivinada)) {
+          panel.updatePanel(letraAdivinada);
+          if (panel._lines.join("") === panel._wordselected) {
+            gameEnded = true;
+            victoryMessage.textContent = result.getVictoryMessage(
+              panel._wordselected
+            );
+            playAgainButton.style.display = "block";
+            keyboard.disableColorChanges();
+          }
+        } else {
+          const nextPartImage = bodyParts.getNextPart();
+          if (nextPartImage) {
+            bodyPartImage.src = nextPartImage;
+          }
+          if (bodyParts._currentPartIndex === bodyParts._parts.length) {
+            gameEnded = true;
+            defeatMessage.textContent = result.getDefeatMessage(
+              panel._wordselected
+            );
+            playAgainButton.style.display = "block";
+            keyboard.disableColorChanges();
+          }
         }
       }
     });

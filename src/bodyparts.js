@@ -17,7 +17,7 @@ class BodyParts {
       "/assets/images/6.png",
       "/assets/images/7.png",
     ];
-    this._currentPartIndex = 0;
+    this._currentPartIndex = 1;
   }
 
   getNextPart() {
