@@ -1,22 +1,15 @@
 class PokenApi {
-    constructor() {
-      this.baseUrl = "https://pokeapi.co/api/v2/";
-    }
-  
-    async getPokemonData(pokemonName) {
-      try {
-        const response = await fetch(`${this.baseUrl}pokemon/${pokemonName}`);
-        if (!response.ok) {
-          throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-        const data = await response.json();
-        return data;
-      } catch (error) {
-        console.error("Error fetching Pokémon data:", error);
-        throw error;
-      }
-    }
+  constructor() {
+    this._baseUrl = "https://pokeapi.co/api/v2/pokemon/"; //url
   }
-  
-  export { PokenApi };
-  
+  async getData(id) {
+    //asycn, inidica que sera una funcion asincrona(se realiza una consula a la api de pkemon)
+    const response = await fetch(this._baseUrl + (id - 1)); //realiza el proceso de consulta y guarda
+    // los datos en response
+    const data = await response.json(); //espera que el proceso de la linea 7(const response = await fetch(this.baseUrl);) 
+    //termine, .json convierte los datos obtenidos a un array de objetos [{}]
+    console.log(data);
+    return data;
+  }
+}
+export { PokenApi };

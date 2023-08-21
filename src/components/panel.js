@@ -7,19 +7,20 @@ Similar a las imagenes adjuntas
  */
 
 // panel.js
+import { PokenApi } from "../api/pokemon-api.js";
+
 class Panel {
   constructor() {
-    this._vector = ["PERRO", "GATO", "CONEJO", "CABALLO"];
+    this._PokenApi = new PokenApi();
     this._wordselected = "";
-    this._result = [];
     this._lines = [];
   }
 
-  choiseWord() {
-      const id = Math.floor(Math.random() * this._vector.length);
-    this._wordselected = this._vector[id];
-
-   
+  async choiseWord() {
+    const id = Math.floor(Math.random() * (200 - 1), 0);
+    const data = await this._PokenApi.getData(id);
+    console.log(data.name.toUpperCase());
+    this._wordselected = data.name.toUpperCase();
   }
 
   drawLines() {
@@ -47,9 +48,6 @@ class Panel {
 
     this.putOnHtml();
   }
-
 }
-
-
 
 export { Panel };
