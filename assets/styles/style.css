@@ -77,3 +77,44 @@ main {
   align-items: center;
 
 }
+
+#startGame {
+  text-align: center;
+  margin: 20px;
+}
+
+#startButton {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #000000;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.7s;
+}
+
+#startButton:hover {
+  background-color: #850000;
+  color: #000000;
+}
+
+@media (max-width: 768px) {
+  #startButton {
+    font-size: 14px;
+  }
+}
+
+#playAgainButton {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #000000;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 20px;
+}
+
+#playAgainButton:hover {
+  background-color: #919191;
+}

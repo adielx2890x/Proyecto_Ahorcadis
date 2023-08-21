@@ -10,8 +10,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const gameContainerDiv = document.getElementById("gameContainer");
 
   startButton.addEventListener("click", () => {
-    startGameDiv.style.display = "none";       // Oculta la pantalla de inicio
-    gameContainerDiv.style.display = "flex";  // Muestra el contenido del juego
+    startGameDiv.style.display = "none";       
+    gameContainerDiv.style.display = "flex";  
   });
 });
 
