@@ -1,7 +1,7 @@
-import { Keyboard } from "./keyboard.js";
-import { Panel } from "./panel.js";
-import { BodyParts } from "./bodyparts.js";
-import { Result } from "./result.js";
+import { Keyboard } from "./components/keyboard.js";
+import { Panel } from "./components/panel.js";
+import { BodyParts } from "./components/bodyparts.js";
+import { Result } from "./components/result.js";
 
 document.addEventListener("DOMContentLoaded", () => {
 
