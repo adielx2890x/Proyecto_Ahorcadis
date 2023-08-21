@@ -71,3 +71,9 @@ main {
   display: block;
   margin: 0 auto;
 }
+
+#gameContainer{
+  flex-direction: column;
+  align-items: center;
+
+}

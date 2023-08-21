@@ -71,7 +71,6 @@ class Keyboard {
         if (!this.gameEnded) { 
 
               const letraAdivinada = key;
-        console.log("Presionaste la tecla:", letraAdivinada);
 
         if (panel._wordselected.includes(letraAdivinada)) {
           button.classList.remove("keyButtons");
@@ -91,17 +90,17 @@ class Keyboard {
   resetKeys() {
     const buttons = document.querySelectorAll(".keysButtons");
     buttons.forEach((button) => {
-      button.classList.remove("correct", "incorrect"); // Elimina las clases de resaltado
-      button.disabled = false; // Habilita las teclas
+      button.classList.remove("correct", "incorrect");
+      button.disabled = false; 
     });
   }
 
-   // Agrega un método para deshabilitar el cambio de colores de las teclas
+   
    disableColorChanges() {
     this.gameEnded = true;
   }
 
-  // Agrega un método para habilitar el cambio de colores de las teclas
+  
   enableColorChanges() {
     this.gameEnded = false;
   }

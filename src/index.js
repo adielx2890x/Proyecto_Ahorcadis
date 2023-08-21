@@ -4,6 +4,17 @@ import { BodyParts } from "./bodyparts.js";
 import { Result } from "./result.js";
 
 document.addEventListener("DOMContentLoaded", () => {
+
+  const startButton = document.getElementById("startButton");
+  const startGameDiv = document.getElementById("startGame");
+  const gameContainerDiv = document.getElementById("gameContainer");
+
+  startButton.addEventListener("click", () => {
+    startGameDiv.style.display = "none";       // Oculta la pantalla de inicio
+    gameContainerDiv.style.display = "flex";  // Muestra el contenido del juego
+  });
+});
+
   let keyboard = new Keyboard();
   let panel = new Panel();
   let bodyParts = new BodyParts();
@@ -40,8 +51,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   playAgainButton.addEventListener("click", restartGame);
 
-  /* */
-
   document.querySelectorAll(".keysButtons").forEach((button) => {
     button.addEventListener("click", () => {
       if (!gameEnded ) {
@@ -76,4 +85,4 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
-});
+
